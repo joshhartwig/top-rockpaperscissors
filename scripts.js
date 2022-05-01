@@ -12,20 +12,22 @@ paper beats rock, rock beats scissors, scissors beat paper or tie if both select
 let playerScore = 0;
 let computerScore = 0;
 
-console.log('let\'s play a game of rock paper scissors');
+console.log('let\'s play a game of rock paper scissors.');
+let guess = prompt('Pick a tool: Rock, Paper, Or Scissors.');
 
-for(let i = 0; i < 100; i++){
-    let guess = Math.floor(Math.random() * 3) + 1;
-    playRound(guess, computerPlay());
-}
+playRound(mapStringToNumber(guess),getRandomBetween(3));
 
-console.log(`Game Over: Player Score is: ${playerScore} Computer Score is: ${computerScore}. X wins.`); 
+
+
+
+//console.log(`Game Over: Player Score is: ${playerScore} Computer Score is: ${computerScore}. X wins.`); 
 
 //pick random number between 1 and 3
-function computerPlay() {
-    return Math.floor(Math.random() * 3) + 1;
+function getRandomBetween(MaxValue) {
+    return Math.floor(Math.random() * MaxValue) + 1;
 }
 
+//maps string choice to number ex rock = 1
 function mapStringToNumber(choice){
     switch (choice.toLowerCase()) {
         case 'rock':
@@ -35,54 +37,56 @@ function mapStringToNumber(choice){
         case 'scissors':
             return 3;
         default:
+            return 0;
             break;
     }
 }
 
+//play a round, player v computer
 function playRound(playerSelection, computerSelection) {
 
     //tie
     if (playerSelection === computerSelection) {
-        console.log('tie');
+        console.log(`Tie. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
         return;
     }
 
-    //rock vs paper
+    //rock v paper
     if (playerSelection === 1 && computerSelection == 2) {
         console.log(`Computer wins Paper beats Rock. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
         computerScore++;
         return;
     }
 
-    //rock vs scissors
+    //rock v scissors
     if (playerSelection === 1 && computerSelection == 3) {
         console.log(`Player wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
         playerScore++;
         return;
     }
 
-    //paper vs rock
+    //paper v rock
     if (playerSelection === 2 && computerSelection == 1) {
         console.log(`Player wins, Rock beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
         playerScore++;
         return;
     }
 
-    //paper vs scissors
+    //paper v scissors
     if (playerSelection === 2 && computerSelection == 3) {
         console.log(`Computer wins, Scissors beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
         computerScore++;
         return;
     }
 
-    //scissors vs rock
+    //scissors v rock
     if (playerSelection === 3 && computerSelection == 1) {
         console.log(`Computer wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
         computerScore++;
         return;
     }
 
-    //scissors vs rock
+    //scissors v rock
     if (playerSelection === 3 && computerSelection == 2) {
         console.log(`Player wins, Scissors beat paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
         playerScore++;
