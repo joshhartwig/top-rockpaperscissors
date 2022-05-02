@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts.js"></script>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/kbk6nzf.css">
     <title>Rock Paper Scissors</title>
 </head>
+
 <body>
-    <div class="rps-heading">
-        <h1 class="rps-title-header">Rock Paper Scissors</h1>
-        <p class="rps-title-subheader">Part of The Odin Project Foundations Course by Josh Hartwig</p>
+    <div class="container">
+        <div class="rps-heading">
+            <h1 class="rps-title-header">Rock Paper Scissors</h1>
+            <p class="rps-title-subheader">Part of The Odin Project Foundations Course by
+                <span class="rps-title-signature">Josh Hartwig</span>
+            </p>
+        </div>
+
+        <button class="rps-button" onclick="game()">Play</button>
+
+        <div class="rps-body">
+            <p>The Odin Project Rock Paper and Scissors project. For now, view the browser console to view results.</p>
+        </div>
+
     </div>
-    
-    <button class="rps-button" onclick="game()">Play</button>
-    
-    <div class="rps-body">
-        <p>The Odin Project Rock Paper and Scissors project. For now, view the browser console to view results.</p>
+    <div class="rps-footer">
+        stuff goes here
     </div>
-    
-    
 </body>
+
 </html>

@@ -1,26 +1,56 @@
 body {
     margin: 0;
+    font-family: input-sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #43ff04;
+
+}
+
+.container {
     display: flex;
     flex-direction: column;
-    font-family: 'Open Sans', sans-serif;
+    padding-left: 20%;
+    padding-right: 20%;
+    align-content: center;
+    justify-content: center;
     text-align: center;
-    width: 60%;
-    align-items: center;
-    padding: 10%;
+    height: 80%;
 }
 
 .rps-title-header {
-    font-family: 'Oleo Script Swash Caps', cursive;
-    font-weight: 200;
+    font-weight: 700;
+    font-style: normal;
     font-size: 48px;
+    color: black;
 }
 
 .rps-title-subheader {
-    font-family: 'Oleo Script Swash Caps', cursive;
-    font-weight:lighter;
+    font-weight: lighter;
     font-size: 20px;
+    color: black;
 }
 
+.rps-title-signature {
+    font-family: casey, sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    font-style: normal;
+}
 
+.rps-button {
+    border-radius: 8px;
+    width: 100px;
+    margin: auto;
+    border: none;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
 
-
+.rps-footer {
+    margin: auto;
+    background-color: black;
+    color: white;
+    padding: .5 rem;
+}
