@@ -26,13 +26,13 @@ body {
     font-weight: 700;
     font-style: normal;
     font-size: 48px;
-    color: #035397;
+    color: black;
 }
 
 .rps-title-subheader {
     font-weight: lighter;
     font-size: 20px;
-    color: #035397
+    color: black;
 }
 
 .rps-title-signature {
@@ -40,12 +40,13 @@ body {
     font-weight: 700;
     font-size: 36px;
     font-style: normal;
-    color: #E8630A;
+    color: #4f4789;
 }
 
 .rps-button {
     border-radius: 8px;
     width: 100px;
+    height: 30px;
     margin: auto;
     border: none;
     background-color: black;
@@ -57,5 +58,5 @@ body {
     margin-top: 20px;
     font-weight: lighter;
     font-size: 14px;
-    color: #035397;
+    color: black;
 }
