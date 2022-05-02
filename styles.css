@@ -1,4 +1,26 @@
 body {
     margin: 0;
     display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    width: 60%;
+    align-items: center;
+    padding: 10%;
 }
+
+.rps-title-header {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-weight: 200;
+    font-size: 48px;
+}
+
+.rps-title-subheader {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-weight:lighter;
+    font-size: 20px;
+}
+
+
+
+

@@ -12,15 +12,7 @@ paper beats rock, rock beats scissors, scissors beat paper or tie if both select
 let playerScore = 0;
 let computerScore = 0;
 
-console.log('let\'s play a game of rock paper scissors.');
-let guess = prompt('Pick a tool: Rock, Paper, Or Scissors.');
 
-playRound(mapStringToNumber(guess),getRandomBetween(3));
-
-
-
-
-//console.log(`Game Over: Player Score is: ${playerScore} Computer Score is: ${computerScore}. X wins.`); 
 
 //pick random number between 1 and 3
 function getRandomBetween(MaxValue) {
@@ -39,6 +31,19 @@ function mapStringToNumber(choice){
         default:
             return 0;
             break;
+    }
+}
+
+//core game
+function game(){
+    
+    let round = 0;
+    console.log('let\'s play a game of rock paper scissors.');
+
+    for(let i = 0; i < 5; i++){
+        let guess = prompt('Pick a tool: Rock, Paper, Or Scissors.');
+        playRound(mapStringToNumber(guess),getRandomBetween(3));
+        round++;
     }
 }
 
