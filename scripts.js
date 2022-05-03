@@ -11,7 +11,7 @@ paper beats rock, rock beats scissors, scissors beat paper or tie if both select
 
 let playerScore = 0;
 let computerScore = 0;
-
+let results = [];
 
 
 //pick random number between 1 and 3
@@ -42,23 +42,35 @@ function game(){
 
     for(let i = 0; i < 5; i++){
         let guess = prompt('Pick a tool: Rock, Paper, Or Scissors.');
-        playRound(mapStringToNumber(guess),getRandomBetween(3));
+        playRound(mapStringToNumber(guess),getRandomBetween(3),round);
         round++;
     }
+
+    let printedResults = '<ul>';
+    results.forEach(r => {
+        printedResults += `<li>${r}</li>`;
+    });
+    printedResults += '</ul>';
+    
+
+    
+    document.getElementById("results-list").innerHTML = printedResults;
 }
 
 //play a round, player v computer
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection, roundNumber) {
 
     //tie
     if (playerSelection === computerSelection) {
         console.log(`Tie. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
+        results[roundNumber] = `Tie. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
         return;
     }
 
     //rock v paper
     if (playerSelection === 1 && computerSelection == 2) {
         console.log(`Computer wins Paper beats Rock. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
+        results[roundNumber] = `Computer wins Paper beats Rock. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
         computerScore++;
         return;
     }
@@ -66,6 +78,7 @@ function playRound(playerSelection, computerSelection) {
     //rock v scissors
     if (playerSelection === 1 && computerSelection == 3) {
         console.log(`Player wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
+        results[roundNumber] = `Player wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
         playerScore++;
         return;
     }
@@ -73,6 +86,7 @@ function playRound(playerSelection, computerSelection) {
     //paper v rock
     if (playerSelection === 2 && computerSelection == 1) {
         console.log(`Player wins, Rock beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
+        results[roundNumber] = `Player wins, Rock beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
         playerScore++;
         return;
     }
@@ -80,6 +94,7 @@ function playRound(playerSelection, computerSelection) {
     //paper v scissors
     if (playerSelection === 2 && computerSelection == 3) {
         console.log(`Computer wins, Scissors beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
+        results[roundNumber] = `Computer wins, Scissors beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
         computerScore++;
         return;
     }
@@ -87,6 +102,7 @@ function playRound(playerSelection, computerSelection) {
     //scissors v rock
     if (playerSelection === 3 && computerSelection == 1) {
         console.log(`Computer wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
+        results[roundNumber] = `Computer wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
         computerScore++;
         return;
     }
@@ -94,6 +110,7 @@ function playRound(playerSelection, computerSelection) {
     //scissors v rock
     if (playerSelection === 3 && computerSelection == 2) {
         console.log(`Player wins, Scissors beat paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
+        results[roundNumber] = `Player wins, Scissors beat paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
         playerScore++;
         return;
     }

@@ -4,8 +4,10 @@ body {
     font-weight: 400;
     font-style: normal;
     background-color: #43ff04;
+}
 
-
+ul {
+    list-style-type: none;
 }
 
 .container {
@@ -54,9 +56,10 @@ body {
     text-decoration: none;
 }
 
-.rps-body {
+.rps-body rps-results {
     margin-top: 20px;
     font-weight: lighter;
     font-size: 14px;
     color: black;
 }
+
