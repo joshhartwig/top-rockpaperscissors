@@ -9,6 +9,14 @@ paper beats rock, rock beats scissors, scissors beat paper or tie if both select
 
 */
 
+/* update
+remove the logic that plays exactly five rounds.
+Create three buttons, one for each selection. 
+Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+Add a div for displaying results and change all of your console.logs into DOM methods.
+Display the running score, and announce a winner of the game once one player reaches 5 points.
+*/
+
 let playerScore = 0;
 let computerScore = 0;
 let results = [];
@@ -38,7 +46,6 @@ function mapStringToNumber(choice){
 function game(){
     
     let round = 0;
-    console.log('let\'s play a game of rock paper scissors.');
 
     for(let i = 0; i < 5; i++){
         let guess = prompt('Pick a tool: Rock, Paper, Or Scissors.');

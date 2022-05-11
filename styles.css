@@ -1,5 +1,8 @@
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     font-family: input-sans, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -12,7 +15,6 @@ ul {
 
 .container {
     display: flex;
-    margin-top: 10%;
     flex-direction: column;
     width: 30;
     padding-left: 20%;
@@ -20,8 +22,6 @@ ul {
     align-content: center;
     justify-content: center;
     text-align: center;
-    height: 80%;
-
 }
 
 .rps-title-header {
@@ -37,29 +37,44 @@ ul {
     color: black;
 }
 
+.rps-buttons-layout-player {
+    margin-top: 5%;
+    margin-bottom: 10px;
+}
+
+.rps-buttons-player {
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: none;
+    background-color: #004E72;
+    color: white; 
+}
+
+.rps-buttons-computer {
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: none;
+    background-color: #8EB07F;
+    color: white;
+}
+
+.rps-results {
+    height: 40vh;
+}
+
+.rps-footer {
+    background-color: black;
+}
+
 .rps-title-signature {
     font-family: casey, sans-serif;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 12px;
     font-style: normal;
     color: #4f4789;
-}
-
-.rps-button {
-    border-radius: 8px;
-    width: 100px;
-    height: 30px;
-    margin: auto;
-    border: none;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-}
-
-.rps-body rps-results {
-    margin-top: 20px;
-    font-weight: lighter;
-    font-size: 14px;
-    color: black;
 }
 

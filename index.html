@@ -15,26 +15,31 @@
     <div class="container">
         <div class="rps-heading">
             <h1 class="rps-title-header">Rock Paper Scissors</h1>
-            <p class="rps-title-subheader">Part of The Odin Project Foundations Course by
-                <span class="rps-title-signature">Josh Hartwig</span>
-            </p>
         </div>
-
-        <button class="rps-button" onclick="game()">Play</button>
 
         <div class="rps-body">
-            <p>The Odin Project Rock Paper and Scissors project part 1. Click play to start guesses for 5 rounds. The computer will
-                play on it's own. The results will be reported below.
+            <p>Based on The Odin Project Part 2. Select an image below to start a game of Rock, Paper, Scissors.
             </p>
         </div>
+
+        <div class="rps-buttons-layout-player">
+            <button class="rps-buttons-player" id="player-rock">Rock</button>
+            <button class="rps-buttons-player" id="player-paper">Paper</button>
+            <button class="rps-buttons-player" id="player-scissors">Scissors</button>
+        </div>
+
+        <div class="rps-buttons-layout-computer">
+            <button class="rps-buttons-computer" id="comp-rock">Rock</button>
+            <button class="rps-buttons-computer" id="comp-paper">Paper</button>
+            <button class="rps-buttons-computer" id="comp-scissors">Scissors</button>
+        </div>
+
         <div class="rps-results">
             <p>Results</p>
         </div>
-        <div class="rps-results" id="results-list">
-
-        </div>
 
     </div>
+    <div class="rps-footer">Written by <span class="rps-title-signature">Josh Hartwig</span></div>
 </body>
 
 </html>
