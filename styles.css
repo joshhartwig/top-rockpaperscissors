@@ -42,25 +42,28 @@ ul {
     margin-bottom: 10px;
 }
 
-.rps-buttons-player {
+button {
     border-radius: 8px;
     width: 100px;
     height: 100px;
-    margin: auto;
     border: none;
+    border-radius: .50rem;
+    margin: auto;
+    color: white;
+}
+
+.rps-buttons-player {
     background-color: #004E72;
-    color: white; 
+}
+
+.rps-buttons-player:hover {
+    border: .4rem solid black;
 }
 
 .rps-buttons-computer {
-    border-radius: 8px;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: none;
     background-color: #8EB07F;
-    color: white;
 }
+
 
 .rps-results {
     height: 40vh;

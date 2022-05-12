@@ -20,6 +20,7 @@ Display the running score, and announce a winner of the game once one player rea
 let playerScore = 0;
 let computerScore = 0;
 let results = [];
+let round = 0;
 
 
 //pick random number between 1 and 3
@@ -43,24 +44,18 @@ function mapStringToNumber(choice){
 }
 
 //core game
-function game(){
-    
-    let round = 0;
+function playGame(x){
 
-    for(let i = 0; i < 5; i++){
-        let guess = prompt('Pick a tool: Rock, Paper, Or Scissors.');
-        playRound(mapStringToNumber(guess),getRandomBetween(3),round);
-        round++;
-    }
+    playRound(x,getRandomBetween(3),round);
+    round++;
+
 
     let printedResults = '<ul>';
     results.forEach(r => {
         printedResults += `<li>${r}</li>`;
     });
     printedResults += '</ul>';
-    
-
-    
+        
     document.getElementById("results-list").innerHTML = printedResults;
 }
 

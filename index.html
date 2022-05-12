@@ -23,9 +23,9 @@
         </div>
 
         <div class="rps-buttons-layout-player">
-            <button class="rps-buttons-player" id="player-rock">Rock</button>
-            <button class="rps-buttons-player" id="player-paper">Paper</button>
-            <button class="rps-buttons-player" id="player-scissors">Scissors</button>
+            <button onclick="playGame(1)" class="rps-buttons-player" id="player-rock">Rock</button>
+            <button onclick="playGame(2)" class="rps-buttons-player" id="player-paper">Paper</button>
+            <button onclick="playGame(3)" class="rps-buttons-player" id="player-scissors">Scissors</button>
         </div>
 
         <div class="rps-buttons-layout-computer">
@@ -36,6 +36,7 @@
 
         <div class="rps-results">
             <p>Results</p>
+            <div class="rps-results-detail" id="results-list"></div>
         </div>
 
     </div>
