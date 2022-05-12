@@ -20,7 +20,7 @@ Display the running score, and announce a winner of the game once one player rea
 let playerScore = 0;
 let computerScore = 0;
 let results = [];
-let round = 0;
+let round = 1;
 
 
 //pick random number between 1 and 3
@@ -29,7 +29,7 @@ function getRandomBetween(MaxValue) {
 }
 
 //maps string choice to number ex rock = 1
-function mapStringToNumber(choice){
+function mapStringToNumber(choice) {
     switch (choice.toLowerCase()) {
         case 'rock':
             return 1;
@@ -44,35 +44,46 @@ function mapStringToNumber(choice){
 }
 
 //core game
-function playGame(x){
+function playGame(x) {
 
-    playRound(x,getRandomBetween(3),round);
-    round++;
+    if (round >= 6) {
+        round = 0;
+        results = [];
+    }
 
+    playRound(x, getRandomBetween(3), round);
 
     let printedResults = '<ul>';
     results.forEach(r => {
         printedResults += `<li>${r}</li>`;
     });
     printedResults += '</ul>';
-        
+
     document.getElementById("results-list").innerHTML = printedResults;
+    round++;
+}
+
+function outlineComputerSelection(id) {
+    const button = document.getElementById(id)
+    button.style.outline[".4rem solid black;"];
 }
 
 //play a round, player v computer
 function playRound(playerSelection, computerSelection, roundNumber) {
 
+    //outlineComputerSelection(toString(computerSelection));
+
     //tie
     if (playerSelection === computerSelection) {
         console.log(`Tie. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
-        results[roundNumber] = `Tie. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
+        results[roundNumber] = `Tie.`;
         return;
     }
 
     //rock v paper
     if (playerSelection === 1 && computerSelection == 2) {
         console.log(`Computer wins Paper beats Rock. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
-        results[roundNumber] = `Computer wins Paper beats Rock. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
+        results[roundNumber] = `Computer wins Paper beats Rock.`;
         computerScore++;
         return;
     }
@@ -80,7 +91,7 @@ function playRound(playerSelection, computerSelection, roundNumber) {
     //rock v scissors
     if (playerSelection === 1 && computerSelection == 3) {
         console.log(`Player wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
-        results[roundNumber] = `Player wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
+        results[roundNumber] = `Player wins, Rock beats Scissors.`;
         playerScore++;
         return;
     }
@@ -88,7 +99,7 @@ function playRound(playerSelection, computerSelection, roundNumber) {
     //paper v rock
     if (playerSelection === 2 && computerSelection == 1) {
         console.log(`Player wins, Rock beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
-        results[roundNumber] = `Player wins, Rock beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
+        results[roundNumber] = `Player wins, Rock beats Paper.`;
         playerScore++;
         return;
     }
@@ -96,7 +107,7 @@ function playRound(playerSelection, computerSelection, roundNumber) {
     //paper v scissors
     if (playerSelection === 2 && computerSelection == 3) {
         console.log(`Computer wins, Scissors beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
-        results[roundNumber] = `Computer wins, Scissors beats Paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
+        results[roundNumber] = `Computer wins, Scissors beats Paper.`;
         computerScore++;
         return;
     }
@@ -104,7 +115,7 @@ function playRound(playerSelection, computerSelection, roundNumber) {
     //scissors v rock
     if (playerSelection === 3 && computerSelection == 1) {
         console.log(`Computer wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
-        results[roundNumber] = `Computer wins, Rock beats Scissors. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
+        results[roundNumber] = `Computer wins, Rock beats Scissors.`;
         computerScore++;
         return;
     }
@@ -112,7 +123,7 @@ function playRound(playerSelection, computerSelection, roundNumber) {
     //scissors v rock
     if (playerSelection === 3 && computerSelection == 2) {
         console.log(`Player wins, Scissors beat paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`);
-        results[roundNumber] = `Player wins, Scissors beat paper. -- Player Selection: ${playerSelection} Computer Selection: ${computerSelection}`;
+        results[roundNumber] = `Player wins, Scissors beat paper.`;
         playerScore++;
         return;
     }

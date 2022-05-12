@@ -2,11 +2,11 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
     font-family: input-sans, sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #43ff04;
+    background-color: black;
 }
 
 ul {
@@ -14,7 +14,7 @@ ul {
 }
 
 .container {
-    display: flex;
+    flex: 1;
     flex-direction: column;
     width: 30;
     padding-left: 20%;
@@ -22,6 +22,7 @@ ul {
     align-content: center;
     justify-content: center;
     text-align: center;
+    background-color: #43ff04;
 }
 
 .rps-title-header {
@@ -60,11 +61,6 @@ button {
     border: .4rem solid black;
 }
 
-.rps-buttons-computer {
-    background-color: #8EB07F;
-}
-
-
 .rps-results {
     height: 40vh;
 }
@@ -75,9 +71,10 @@ button {
 
 .rps-title-signature {
     font-family: casey, sans-serif;
-    font-weight: 700;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 16px;
     font-style: normal;
-    color: #4f4789;
+    color: white;
+    text-align: right;
+    margin: 0 0 0 10px;
 }
-
